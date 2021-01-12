@@ -6,4 +6,4 @@ const obj = {
 
 console.log(obj);
 
-let arr = ['plum.png', 'orange.jpg', 'apple.bmp'];
+let arr = ['plum.png', 'orange.jpg', 'apple.bmp', 'banan.png'];
