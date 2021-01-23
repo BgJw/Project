@@ -1,31 +1,74 @@
-const obj = {
-    name: 'Bohdan',
-    age: 25,
-    isMarried: false
-};
+let numberOfFilms;
 
-console.log(obj);
+function start() {
 
-let arr = ['plum.png', 'orange.jpg', 'apple.bmp', 'banan.png'];
+    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+        numberOfFilms = +prompt('Cколько фильмов вы уже просмотрели?');
 
+    }
+ }
 
-
-let numberOfFilms = prompt('Cколько фильмов вы уже просмотрели?');
-
-
+start();
 
 const personalMovieDB = {
     count: numberOfFilms,
     movies: {},
     actors: {},
     genres: [],
-    privat: false
+    privat: true
 };
 
+function rememberMyFilms() {
 
-let lastWatchedFilms = prompt('Last watched Movie?');
-let ratingFilms = prompt('what rating will you put on the film?');
+    
+for (let i = 0; i < 2; i++) {
+    let a = prompt('Last watched Movie?');
+    let b = prompt('what rating will you put on the film?');
+    
+    if (a == '' || b == '' || a == null || b == null || a.length > 50) {
+    console.log('error');
+    i--;
+    } else {
+        personalMovieDB.movies[a] = b;
+    }  
+  }
 
-personalMovieDB.movies.lastWatchedFilms = ratingFilms;
+}
+rememberMyFilms();
 
-console.log(personalMovieDB);
+function detectPersonalMovie() {
+
+ if ( Number( personalMovieDB.count )){
+
+ if(personalMovieDB.count  < 10) {
+     console.log('very small');
+ } else if(personalMovieDB.count < 30) {
+     console.log('good');
+ } else if( personalMovieDB.count > 30) {
+     console.log('very good');
+ }
+} else {
+    console.log('error');
+ }
+}
+
+function showMyDB() {
+    return personalMovieDB.privat? 
+    console.log('ok') : console.log(personalMovieDB);
+}
+showMyDB();
+
+function writeYourGenres() {
+ for (let index = 0; index < 3; index++) {
+   const yourGenres = prompt('Your Genres?')
+   if (yourGenres == null || yourGenres == '') {
+       index--;
+   } else {
+       personalMovieDB.genres.push(yourGenres);
+   } 
+ }   
+}
+
+writeYourGenres();
+
+console.log(personalMovieDB) 
