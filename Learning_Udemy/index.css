@@ -1,0 +1,53 @@
+body {
+    background-color: black;
+}
+.modal {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 500px;
+    
+}
+.modall {
+    width: 100%;
+    height: 300px;
+}
+.modal_box {
+    border-radius: 5%;
+    width: 290px;
+    height: 290px;
+    background-color: white;
+    margin: 0 auto;
+    transition: all 3s;
+}
+.box-remove {
+      width: 0px;
+      height: 0px;
+      transition: all 3s;
+}
+.modal_button {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: 200px;
+}
+.modal_button div {
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    height: 20px;
+    margin: 0 auto;
+}
+
+.modal_button div button {
+    cursor: pointer;
+}
+.button button {
+    padding: 30px;
+    border-radius: 4%;
+    cursor: pointer;
+    
+}
+.button button:hover {
+    opacity: 0.8;
+}
